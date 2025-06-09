@@ -162,6 +162,28 @@ html {
     background-color: white;
   }
 
+/* quote */
+
+.quote {
+    background-image: url('pictures/bg.png');   
+    background-size: cover;           
+    background-position: center;       
+    background-repeat: no-repeat;
+    padding: 40px 8px; 
+    margin: 0;
+    text-align: center; 
+    color: #333; 
+    font-size: 1.2rem; 
+    font-style: italic; 
+    height: 700px;
+    width: auto;
+}
+
+.quote h1 {
+    font-size: 1.8rem; 
+    color: #ffffff; 
+}
+
 /* beranda*/
 
 .welcome {
@@ -470,7 +492,7 @@ border: #F6C915 2px solid;}
     .welcome h1 {
         font-size: 2.4rem;
     }
-    .welocome img {
+    .welcome img {
         max-width: 40%;
         height: 40%;
     }
