@@ -1,0 +1,95 @@
+
+.slider-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.card-wrapper {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+}
+
+.card-list {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.card-item {
+  flex: 0 0 calc(100% / 3 - 20px);
+  list-style: none;
+}
+
+.card-link {
+  display: block;
+  background: #fff;
+  padding: 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card-link:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.badge {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 8px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.slider-btn:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.left-btn {
+  left: 0;
+}
+
+.right-btn {
+  right: 0;
+}
+
+@media (max-width: 960px) {
+  .card-item {
+    flex: 0 0 calc(100% / 2 - 20px);
+  }
+}
+
+@media (max-width: 640px) {
+  .card-item {
+    flex: 0 0 100%;
+  }
+}
