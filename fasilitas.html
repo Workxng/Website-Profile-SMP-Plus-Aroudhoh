@@ -5,56 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fasilitas</title>
   <link rel="stylesheet" href="fasilitas.css" />
+ <script src="script.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div class="top-contact">
-    <div class="left-contact">
-      arroudhoh.smp@gmail.com | (031) 8673171
-    </div>
+<div class="header-top">
+  arroudhoh.smp@gmail.com | <a href="tel:0318673171">(031) 8673171</a>
+</div>
     <div class="right-socials">
-      <a href="https://youtube.com/@spardhoti.official?si=nCYigEj4lG_IErTG/@spardhoti.official" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-      <a href="https://www.tiktok.com/@smp_plus_arroudhoh?is_from_webapp=1&sender_device=pc/@smp_plus_arroudhoh" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-      <a href="https://www.instagram.com/smp_plus_arroudhoh?igsh=NzVmZ2U2Nm9yMzd1/@smp_plus_arroudhoh" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://youtube.com/@spardhoti.official?si=nCYigEj4lG_IErTG/@spardhoti.official" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@smp_plus_arroudhoh?is_from_webapp=1&sender_device=pc/@smp_plus_arroudhoh" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/smp_plus_arroudhoh?igsh=NzVmZ2U2Nm9yMzd1/@smp_plus_arroudhoh" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
     </div>
   </div>
 
-  <header class="navbar-container">
-    <nav class="navbar">
-      <div class="nav-left">
-        <a href="#" class="nav-button">Beranda</a>
-        <div class="dropdown">
-          <button class="nav-button dropbtn">Tentang Kami ⌵</button>
-          <div class="dropdown-content">
-            <a href="#">Sejarah Sekolah</a>
-            <a href="#">Fasilitas</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="nav-button dropbtn">Program ⌵</button>
-          <div class="dropdown-content">
-            <a href="#">Unggulan</a>
-            <a href="#">Ekstrakulikuler</a>
-            <a href="#">Prestasi</a>
-          </div>
-        </div>
-      </div>
-      <div class="nav-right">
-        <a href="#" class="ppdb-btn">PPDB</a>
-      </div>
-    </nav>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <ul class="nav-links">
+    <li><a href="beranda.html" class="nav-button">Beranda</a></li>
+    <li><a href="fasilitas.html" class="nav-button">Fasilitas</a></li>
+    <li><a href="sejarah.html" class="nav-button">Sejarah Sekolah</a></li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <div class="dropdown">
+      <button class="dropbtn">Program  ⌵</button>
+      <div class="dropdown-content">
+        <a href="keunggulan.html">Keunggulan</a>
+        <a href="ekstra.html">Ekstrakurikuler</a>
+        <a href="prestasi.html">Prestasi</a>
+    </ul>
+    <div class="nav-right">
+            <a href="https://ppdb.arroudhohsda.sch.id" class="ppdb-btn">PPDB</a>
+    </div>
+  </div>
+</nav>
 
     <div class="logo-center">
       <img src="all in/logosmp.png" alt="Logo Sekolah" />
     </div>
-  </header>
+  </nav>
 
-  <header class="facility-header">
-    <div class="overlay">
-      <h1>FASILITAS</h1>
-      <h2>SMP PLUS ARROUDHOH</h2>
+        <!-- beranda -->
+    <div class="header">
+        <div class="slider">
+            <div class="slide active" style="background-image: url('all\ in/ftogrup.png');"></div>
+            <div class="slide" style="background-image: url('fas_pict/masjid.png');"></div>
+            <div class="slide" style="background-image: url('all\ in/depansklh.png');"></div>
+            <div class="slide" style="background-image: url('fas_pict/lap.png');"></div>
+        </div>
+        <div class="header-content">
+            <h1>FASILITAS</h1>
+            <h1>SMP PLUS ARROUDHOH</h1>
+        </div>
     </div>
-  </header>v>
 
   <section class="section-spardhoti">
     <h2>Mengenal <span>SPARDHOTI</span> Lebih Dekat</h2>
@@ -63,8 +70,8 @@
     </p>
 
     <div class="button-group">
-      <button class="btn btn-primary">Fasilitas Sekolah</button>
-      <button class="btn btn-outline">Ruang Praktek/kreasi</button>
+      <a href="fs.html" class="button-link">Fasilitas Sekolah</a>
+      <a href="fp.html" class="button-link">Ruang Praktek/kreasi</a>
     </div>
 
     <div class="gallery">
