@@ -1,26 +1,37 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const leftBtn = document.querySelector(".left-btn");
-  const rightBtn = document.querySelector(".right-btn");
-  const cardWrapper = document.querySelector(".card-wrapper");
-  const cardItem = document.querySelector(".card-item");
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
 
-  if (!cardItem) return;
+  function nextSlide() {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+  }
 
-  const cardWidth = cardItem.offsetWidth;
-  const gap = 20;
-  const scrollAmount = (cardWidth + gap) * 3;
+  // Change slide every 5 seconds
+  setInterval(nextSlide, 4000);
+});
 
-  leftBtn.addEventListener("click", () => {
-    cardWrapper.scrollBy({
-      left: -scrollAmount,
-      behavior: "smooth",
-    });
-  });
+new Swiper(".card-wrapper", {
+  loop: true,
+  spaceBetween: 30,
 
-  rightBtn.addEventListener("click", () => {
-    cardWrapper.scrollBy({
-      left: scrollAmount,
-      behavior: "smooth",
-    });
-  });
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  //   responsive
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
 });
