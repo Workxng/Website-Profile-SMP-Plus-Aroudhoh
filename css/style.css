@@ -175,8 +175,8 @@ html {
     color: #333; 
     font-size: 1.2rem; 
     font-style: italic; 
-    height: 700px;
     width: auto;
+    height: 400px;
 }
 
 .quote h1 {
@@ -235,7 +235,6 @@ html {
 
 .kenapa {
     background-color: white; 
-    padding: 50px 20px; 
     text-align: center; 
     color: #333; 
     padding: 6rem 0 6rem 0;
