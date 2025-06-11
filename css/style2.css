@@ -42,7 +42,7 @@
 /* foooter */
 
 .footer-container {
-    background-image: url('pictures/footer.png');
+    background-image: url('/pictures/footer.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
