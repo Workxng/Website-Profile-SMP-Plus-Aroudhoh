@@ -1,4 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Ensure all sections take full width */
+.navbar, 
+.quote, 
+.welcome, 
+.kenapa, 
+.kepala-sekolah, 
+.yt, 
+.container,
+.card-wrapper,
+.footer-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: visible;
+}
+
 html {
     font-size: 16px;
     font-family: 'Ubuntu', sans-serif; 
@@ -7,176 +26,109 @@ html {
     line-height: 1.6;
 }
 
-/* ======== TOP CONTACT ======== */
-.top-contact {
-  background-color: #6d8752;
-  color: white;
-  padding: 8px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-  position: relative;
-}
-
-.top-contact a {
-  color: white;
-  text-decoration: underline;
-}
-
-.right-socials {
-  position: absolute;
-  top: 8px;
-  right: 20px;
-}
-.right-socials a {
-  color: white;
-  margin-left: 15px;
-  font-size: 16px;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.right-socials a:hover {
-  color: #ccc;
-}
-
-/* ======== NAVBAR ======== */
-/* Navbar container */
 .navbar {
-  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px; /* Padding atas-bawah 20px, kiri-kanan 40px */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-
-/* Bagian kiri dan kanan */
-.nav-left,
-.nav-right {
-  display: flex;
-}
-
-/* Hapus default list style */
-.nav-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-  padding: 0;
+  padding: 12px 24px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  flex-wrap: wrap;
+  z-index: 100;
+  position: fixed;
   margin: 0;
 }
 
-/* Tombol navigasi umum */
-.nav-button {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  font-size: 16px;
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px; 
+  z-index: 2;
+
 }
 
-.nav-button:hover {
-  background-color: #f0f0f0;
-  color: #6d8752;
+.nav-links li {
+  position: relative;
+  z-index: 2;
+
 }
 
-/* Tombol khusus PPDB */
-.ppdb-btn {
-  background-color: #ffffff;
-  color: #000000 !important;
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  outline: 2px solid #8a8989; 
-  outline-offset: 2px;
-}
-
-.ppdb-btn:hover {
-  background-color: #6d8752;
-}
-
-/* Responsive untuk layar kecil */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-left,
-  .nav-right {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .nav-button, .ppdb-btn {
-    width: 100%;
-    text-align: left;
-  }
-}
-
-.logo-center {
-  position: absolute;
-  top: 10%; 
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 100%;
-  padding: 6px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  z-index: 11;
-}
-.logo-center img {
-  height: 80px;
-}
-
-/* ======== DROPDOWN ======== */
-.navbar-left a,
+.nav-button,
 .dropbtn {
-  margin: 0 10px;
-  text-decoration: none;
-  color: black;
   background: none;
   border: none;
+  font-size: 16px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 500;
+  color: #333;
+  padding: 8px 12px;
+  text-decoration: none;
+  z-index: 2;
+
 }
+
+.nav-button:hover,
+.dropbtn:hover {
+  color: #f59e0b;
+}
+
+/* ========== DROPDOWN ========== */
 
 .dropdown {
   position: relative;
   display: inline-block;
+  z-index: 1000;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 100%;
+  left: 0;
   background-color: white;
-  min-width: 150px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  z-index: 99;
+  border-radius: 6px;
+  z-index: 101;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
   display: block;
+  padding: 10px 16px;
   text-decoration: none;
+  color: #333;
+     z-index: -1;
+
+  font-size: 14px;
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: #fcd34d;
+  color: #000;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
+/* ========== PPDB BUTTON ========== */
+.ppdb-btn {
+  background-color: #fcd34d;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.ppdb-btn:hover {
+  background-color: #fbbf24;
+}
 /* quote */
 
 .quote {
@@ -184,7 +136,7 @@ html {
     background-size: cover;           
     background-position: center;       
     background-repeat: no-repeat;
-    padding: 40px 8px; 
+    padding: 10px 8px; 
     margin: 0;
     text-align: center; 
     color: #333; 
@@ -215,32 +167,32 @@ html {
     justify-content: center;   
     align-items: center;
     gap: 2rem;  
-    height: 400px;
+    height: 500px;
 }
+
 
 .welcome::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);   
-    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 1, 1, 0.5); /* Light overlay */
+    z-index: 1; /* Behind the text and image */
 }
-
 .welcome h1 {
     position: relative;                
-    z-index: 2;
-    font-size: 1.9rem;                
+    font-size: 3rem;                
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
     -webkit-text-stroke: 1px white;
     text-align: left;
+    z-index: 2;
 }
 
 .welcome img {
-    max-width: 30%;      
-    height: 30%;
+    max-width: 80%;      
+    height: 80%;
     z-index: 2;
 }             
 
@@ -271,7 +223,7 @@ html {
 
 .box {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1.4rem;
     margin: 1.8rem;
 }
@@ -321,10 +273,8 @@ html {
     text-align: left;
     align-items: center;
     flex-direction: row;
-    padding: 3%;
-    flex-direction: column; 
+    padding: 5%;
     align-items: center; 
-    text-align: center; 
 
 }
 
@@ -355,8 +305,8 @@ html {
 .yt {
     background-color: white; 
     display: flex;
-    flex-direction: column;
-    text-align: center; 
+    flex-direction: row;
+    text-align: right; 
     align-items: center;
     gap: 2rem;
     padding: 4rem;
@@ -501,87 +451,97 @@ border: #F6C915 2px solid;}
 
 /* resposive */
 
-@media (min-width: 768px) {
-  /* beranda */
-    .welcome h1 {
-        font-size: 2.4rem;
-    }
-    .welcome img {
-        max-width: 40%;
-        height: 40%;
-    }
-  /* kenapa */
-  .alasan {
-    max-width: 600px; 
-    padding: 30px; 
-    font-size: 1.1rem; 
+@media (max-width: 768px) {
+  /* Remove horizontal padding that might cause overflow */
+  html { 
+    font-size: 0.8rem;
   }
+  .navbar {
+    flex-direction: row; /* Stack items vertically */
+    align-items: center; /* Center items */
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+  }
+  .navbar a {
+    font-size: 1rem;
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+  }
+  .dropbtn {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+  }
+  
+  .top-contact {
+    padding: 8px 10px;
+  }
+  
+  .welcome {
+    padding: 100px 10px;
+  }
+
+  .welcome h1 {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+    text-align: center; /* Center text on smaller screens */
+    margin-top: -6%;
+  }
+
+  .welcome img {
+    display: none; /* Hide image on smaller screens */
+  }
+  
+  .quote {
+    display: none;
+  }
+.box {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+  }
+  
   .kepala-sekolah {
-    flex-direction: row; 
-    align-items: center; 
-    text-align: center; 
-  }
-  .footer-container {
-    flex-direction: column; 
-    justify-content: space-between; 
-    padding: 2rem 4rem; 
-    align-items: center;
+    flex-direction: column; /* Stack items vertically */
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-  .footer-container iframe {
-    width: 100%; 
-    height: 300px; 
+  .kepala-sekolah img {
+    width: 60%; /* Adjust image size for smaller screens */
+  }
+  
+  /* Ensure images don't cause overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+   .yt {
+    flex-direction: column-reverse; /* Stack items vertically */
+    align-items: center; /* Center items */
+    padding: 2rem 1rem; /* Adjust padding for smaller screens */
+    text-align: left;  
   }
 
+    .yt h1 {
+      text-align: center;}
+  /* Fix iframe sizing */
+  .yt iframe {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  
+  /* Fix card container */
+  .container {
+    margin-top: 5%;
+    padding: 1rem;
+  }
+  
+  .card-wrapper {
+    padding: 1rem;
+  }
+  
+  .card-list .card-item .card-link {
+    height: auto;
+    min-height: 500px;
+  }
+  .card-list .card-link .card-img {
+    width: 100%;
+  }
 }
-
-
-@media (min-width: 1024px) {
-    .welcome h1 {
-        font-size: 2.8rem;
-    }
-    .welcome img {
-        max-width: 50%;
-        height: 50%;
-    }
-      /* kenapa */
-    .box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        padding: 0 2rem;
-    }
-    
-    .kepala-sekolah {
-        text-align: left;
-        align-items: center;
-        flex-direction: row;
-        gap: 3rem;
-    }
-    
-    .yt {    
-      display: flex;
-      flex-direction: row;
-      text-align: right; 
-      align-items: center;
-      gap: 3rem;
-      padding: 8rem 4rem;
-    }
-    .yt iframe {
-        width: 200%; 
-        height: 500px; 
-    }
-    .footer-container {
-        flex-direction: row; 
-        justify-content: space-between; 
-        padding: 4rem 8rem; 
-        align-items: center;
-    }
-
-    .footer-container iframe {
-        width: 180%; 
-        height: 400px; 
-    }
-
-  }

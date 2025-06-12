@@ -141,7 +141,8 @@ ol {
 @media (max-width: 768px) {
     .header h1 {
         font-size: clamp(1.5rem, 8vw, 3rem); /* Responsive font size with limits */
-        margin-bottom: 2%; /* Adjusted to prevent overlapping issues */
+        margin-bottom: -4%; /* Adjusted to prevent overlapping issues */
+
     }
      h1 {
         font-size: 2rem; /* Adjusted for smaller screens */
