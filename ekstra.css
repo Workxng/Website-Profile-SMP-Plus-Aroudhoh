@@ -33,6 +33,16 @@ body {
   position: relative;
 }
 
+.top-contact a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.top-contact a:hover {
+  color: #ddd;
+  text-decoration: underline; 
+}
+
 .right-socials {
   position: absolute;
   top: 8px;
@@ -461,55 +471,6 @@ h1 {
     }
 }
 
-/* ======== FOOTER ======== */
-.footer-container {
-    background-image: url('all\ in/footer.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 530px;
-    color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 16rem 5rem 0;
-    gap: 3rem;
-}
-
-.footer-container .footer-section {
-    flex: 1;
-    padding: 0 2rem;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-container h4 {
-    font-size: 1.3rem;
-}
-
-
-.footer-container iframe {
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    min-height: 300px;
-    width: 30%;
-    margin-top: -105px;
-}
-
-.footer-container a {
-    color: #ecf0f1;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-container a:hover {
-    color: #f1c40f;
-}
-
 @media (max-width: 768px) {
     .program-right {
         flex-direction: column;
@@ -549,4 +510,69 @@ ul {
 
 .button-link:hover {
     background-color: #f0f0f0;
+}
+
+/* Footer */
+.footer-container {
+  background-image: url('css/pictures/foot.png');
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px 50px;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  margin: 15px;
+}
+
+.footer-section h4 {
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li,
+.footer-section ul li a {
+  color: #ddd;
+  text-decoration: none;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-map {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin-top: 20px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .ekstra-section,
+  .ekskul-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .ekskul-text,
+  .ekskul-right {
+    padding: 0;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }

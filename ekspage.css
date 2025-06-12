@@ -16,10 +16,10 @@ html {
 }
 
 body {
-    background-color: #f5f5f5;
-    padding: 0px;
-    margin: 0; 
-} 
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
 
 /* ======== TOP CONTACT ======== */
 .top-contact {
@@ -30,49 +30,130 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
-  position: relative;
 }
 
-.right-socials {
-  position: absolute;
-  top: 8px;
-  right: 20px;
-}
-.right-socials a {
+.top-contact a {
   color: white;
-  margin-left: 15px;
+  text-decoration: underline;
+}
+
+.header-top-left {
+  flex: 1;
+}
+
+.header-top-right {
+  display: flex;
+  gap: 15px;
+}
+
+.header-top-right a {
+  color: white;
   font-size: 16px;
   text-decoration: none;
   transition: color 0.3s;
 }
-.right-socials a:hover {
+
+.header-top-right a:hover {
   color: #ccc;
 }
 
-/* ======== NAVBAR ======== */
-.navbar-container {
+
+/*logo*/
+.logo-center {
+  position: absolute;
+  top: 10%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: white;
-  padding: 20px;
-  position: relative;
-  width: 100%;
+  border-radius: 100%;
+  padding: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  z-index: 11;
+}
+.logo-center img {
+  height: 80px;
 }
 
-.nav-row {
+
+/* Navbar container */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 12px 24px;
+  background-color: #fff;
+  flex-wrap: wrap;
+}
+
+/* Navigasi kiri */
+.nav-left .nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Link dalam nav */
+.nav-button {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 8px 14px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .nav-left,
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 50px;
 }
 
 .ppdb-btn {
   position: absolute;
-  top: 20px;
+  top: 50px;
   right: 40px;
   z-index: 10;
   padding: 8px 14px;
@@ -88,70 +169,75 @@ body {
   background-color: #f0f0f0;
 }
 
-.nav-left a,
-.nav-right a,
-.dropbtn {
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  color: #333;
-  font-weight: 500;
-  background-color: white;
-  font-size: 16px;
-  transition: background 0.3s;
-  cursor: pointer;
+
+/* ======== HEADER ======== */
+.header {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Adjust height as needed */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);            
 }
-.nav-left a:hover,
-.nav-right a:hover,
-.dropbtn:hover {
-  background-color: #f0f0f0;
+        
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+        
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+        
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .header-content {
+            z-index: 1;
+            padding: 20px;
+            max-width: 800px;
+        }
+        
+.header h1 {
+    position: relative;                
+    z-index: 2;
+    font-size: 4rem;                
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    text-shadow: 1px 1px 2px white; /* Fallback for non-WebKit browsers */
+    -webkit-text-stroke: 1px white;
+    margin-bottom: -2%;
 }
 
-.logo-center {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 50%;
-  padding: 6px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-.logo-center img {
-  height: 80px;
-}
+h1 {
+    font-size: 2.6rem;
+    color: #436046; 
 
-/* ======== DROPDOWN ======== */
-.dropdown {
-  position: relative;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 110%;
-  left: 0;
-  background-color: white;
-  min-width: 160px;
-  padding: 8px 0;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 99;
-  border-radius: 6px;
-}
-.dropdown-content a {
-  display: block;
-  padding: 10px 15px;
-  margin-bottom: 5px;
-  text-decoration: none;
-  color: black;
-  background-color: white;
-  transition: background 0.2s ease;
-}
-.dropdown-content a:hover {
-  background-color: #f0f0f0;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
 }
 
 /* ======== EKSTRAKURIKULER SECTION ======== */
@@ -218,53 +304,69 @@ body {
   text-align: justify; /* Justify text for better readability */
 }
 
-/* ======== FOOTER ======== */
+/* Footer */
 .footer-container {
-    background-image: url('all\ in/footer.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 530px;
-    color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 16rem 5rem 0;
-    gap: 3rem;
+  background-image: url('css/pictures/foot.png');
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px 50px;
 }
 
-.footer-container .footer-section {
-    flex: 1;
-    padding: 0 2rem;
+.footer-section {
+  flex: 1 1 200px;
+  margin: 15px;
 }
 
-ul {
-    list-style: none;
+.footer-section h4 {
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li,
+.footer-section ul li a {
+  color: #ddd;
+  text-decoration: none;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-map {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin-top: 20px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .ekstra-section,
+  .ekskul-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .ekskul-text,
+  .ekskul-right {
     padding: 0;
-}
+  }
 
-.footer-container h4 {
-    font-size: 1.3rem;
-}
-
-
-.footer-container iframe {
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    min-height: 300px;
-    width: 30%;
-    margin-top: -105px;
-}
-
-.footer-container a {
-    color: #ecf0f1;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-container a:hover {
-    color: #f1c40f;
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* ======== EKSTRAKURIKULER SECTION ======== */
