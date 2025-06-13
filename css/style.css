@@ -26,6 +26,44 @@ html {
     line-height: 1.6;
 }
 
+/* ======== TOP CONTACT ======== */
+.top-contact {
+  background-color: #6d8752;
+  color: white;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  position: relative;
+}
+
+.top-contact a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.top-contact a:hover {
+  color: #ddd;
+  text-decoration: underline; 
+}
+
+.header-top-right {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+}
+.header-top-right a {
+  color: white;
+  margin-left: 15px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.header-top-right a:hover {
+  color: #ccc;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -35,7 +73,7 @@ html {
   border-bottom: 1px solid #e5e5e5;
   flex-wrap: wrap;
   z-index: 100;
-  position: fixed;
+  position: relative;
   margin: 0;
 }
 
