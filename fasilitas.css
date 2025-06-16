@@ -57,21 +57,16 @@ body {
   color: #ccc;
 }
 
+@media (max-width: 768px) {
+  .top-contact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 
-/*logo*/
-.logo-center {
-  position: absolute;
-  top: 10%; 
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 100%;
-  padding: 6px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  z-index: 11;
-}
-.logo-center img {
-  height: 80px;
+  .header-top-right {
+    flex-wrap: wrap;
+  }
 }
 
 
@@ -84,6 +79,13 @@ body {
   background-color: #ffffff;
   border-bottom: 1px solid #e5e5e5;
   flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
 }
 
 .nav-links {
@@ -116,7 +118,7 @@ body {
   color: #f59e0b;
 }
 
-/* ========== DROPDOWN ========== */
+/* Dropdown */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -146,7 +148,7 @@ body {
   display: block;
 }
 
-/* ========== PPDB BUTTON ========== */
+/* PPDB Button */
 .ppdb-btn {
   background-color: #fcd34d;
   color: #000;
@@ -160,6 +162,47 @@ body {
 
 .ppdb-btn:hover {
   background-color: #fbbf24;
+}
+
+/* Responsive: Mobile View */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 16px;
+  }
+
+  .nav-left, .nav-right {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-button,
+  .dropbtn {
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-right {
+    margin-top: 10px;
+  }
+
+  .ppdb-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 
@@ -232,6 +275,33 @@ h1 {
     color: #436046; 
 
 }
+
+@media (max-width: 768px) {
+    .header {
+        height: auto; /* Tinggi otomatis sesuai isi */
+        padding: 40px 20px;
+    }
+
+    .header-content {
+        padding: 10px;
+        max-width: 90%;
+    }
+
+    .header h1 {
+        font-size: 2rem; /* Ukuran judul diperkecil */
+        -webkit-text-stroke: 0.5px white;
+        margin-bottom: 0;
+    }
+
+    h1 {
+        font-size: 2rem; /* Override global h1 untuk mobile */
+    }
+
+    .slide {
+        background-position: center top; /* Lebih fokus di bagian atas gambar */
+    }
+}
+
 
 
 /* ======== MAIN CONTENT ======== */
@@ -319,12 +389,14 @@ h1 {
 
 /* Footer */
 .footer-container {
+  background-color: #2c3e50;
   background-image: url('css/pictures/foot.png');
   color: #fff;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 30px 50px;
+  gap: 20px;
 }
 
 .footer-section {
@@ -334,6 +406,7 @@ h1 {
 
 .footer-section h4 {
   margin-bottom: 15px;
+  color: #ffffff;
 }
 
 .footer-section ul {
@@ -355,213 +428,14 @@ h1 {
 
 .footer-map {
   width: 100%;
-  max-width: 400px;
+  max-width: 200px;
   height: 300px;
   border: 0;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  margin-top: 20px;
+  margin-top: -4px;
 }
 
-/* Responsif */
-@media (max-width: 768px) {
-  .ekstra-section,
-  .ekskul-section {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .ekskul-text,
-  .ekskul-right {
-    padding: 0;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
+.button-link:hover {
+  background-color: #fbbf24;
 }
-
-
-/* Responsive */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 4rem 2rem;
-        gap: 2rem;
-        height: auto;
-    }
-
-    .footer-container .footer-section {
-        flex: 1 1 100%;
-        max-width: 100%;
-        text-align: center;
-        box-sizing: border-box;
-    }
-
-    .footer-container .map-section iframe {
-        height: 200px;
-    }
-
-    .ppdb-btn {
-        margin-top: 15px;
-    }
-}
-
-
-    /* ======================= RESPONSIVE STYLES ======================= */
-
-/* Untuk layar <= 768px (Tablet & HP) */
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-
-  .top-contact {
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: 12px;
-    padding: 10px;
-  }
-
-  .right-socials {
-    position: static;
-    margin-top: 10px;
-  }
-
-  /* Navbar tetap horizontal */
-  .navbar {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 16px;
-    gap: 10px;
-  }
-
-  .nav-left,
-  .nav-right {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .nav-button,
-  .ppdb-btn {
-    font-size: 13px;
-    padding: 6px 10px;
-  }
-
-  .logo-center {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-    margin: 0 auto 10px;
-    order: -1;
-  }
-
-  .header {
-    height: 400px;
-    padding: 20px;
-  }
-
-  .header h1 {
-    font-size: 2.5rem;
-  }
-
-  .section-spardhoti h2 {
-    font-size: 24px;
-  }
-
-  .gallery {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .gallery-item {
-    width: 100%;
-  }
-
-
-
-/* ======== FOOTER ======== */
-.footer-container {
-    background-image: url('css/pictures/foot.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 530px;
-    color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 16rem 5rem 0;
-    gap: 3rem;
-}
-
-.footer-container .footer-section {
-    flex: 1;
-    padding: 0 2rem;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-container h4 {
-    font-size: 1.3rem;
-}
-
-
-.footer-container iframe {
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    min-height: 300px;
-    width: 30%;
-    margin-top: -105px;
-}
-
-.footer-container a {
-    color: #ecf0f1;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-container a:hover {
-    color: #f1c40f;
-}
-
-
-/* Untuk layar sangat kecil (≤ 480px) */
-@media (max-width: 480px) {
-  .header h1 {
-    font-size: 2rem;
-  }
-
-  .section-spardhoti h2 {
-    font-size: 20px;
-  }
-
-  .nav-button,
-  .ppdb-btn {
-    font-size: 14px;
-  }
-
-  .dropdown-content {
-    min-width: 100%;
-    position: relative;
-  }
-}}
